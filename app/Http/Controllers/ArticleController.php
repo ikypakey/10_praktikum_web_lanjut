@@ -6,6 +6,7 @@ use App\Models\Article;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use PDF;
 
 class ArticleController extends Controller
 {
@@ -80,6 +81,7 @@ class ArticleController extends Controller
      * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, $id)
     {
         $article = Article::find($id);
@@ -109,4 +111,9 @@ class ArticleController extends Controller
     {
         //
     }
+    public function cetak_pdf(){
+        $articles=Article::all();
+        $pdf = PDF::loadview('articles.articles_pdf',['articles'=>$articles]);
+        return $pdf->stream();
+    }   
 }
