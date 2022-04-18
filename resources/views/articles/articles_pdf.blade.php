@@ -4,7 +4,7 @@ _<!DOCTYPE html>
  	<title>Membuat Laporan PDF Dengan DOMPDF Laravel</title> 
 </head> 
 <body> 
- 	<style type="text/css">  	 	table tr td,  	 	table tr th{ 
+ 	<style type="text/css">table tr td,table tr th{ 
  	 	 	font-size: 9pt; 
  	 	} 
  	</style> 
